@@ -517,6 +517,7 @@ func (e *engine) Close() (err error) {
 	e.mux.Lock()
 	defer e.mux.Unlock()
 	// Releasing the references to compiled codes including the memory-mapped machine codes.
+	fmt.Println("wazero close")
 	e.codes = nil
 	return
 }
